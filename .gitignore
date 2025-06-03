@@ -5,3 +5,7 @@ dist-ssr
 *.local
 .output
 .vinxi
+
+.env
+.env.*
+/generated/prisma

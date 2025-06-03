@@ -1,18 +1,24 @@
-import { defineConfig } from '@tanstack/react-start/config'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from "@tanstack/react-start/config";
+import viteTsConfigPaths from "vite-tsconfig-paths";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 const config = defineConfig({
   tsr: {
-    appDirectory: 'src',
+    appDirectory: "src",
   },
   vite: {
     plugins: [
       // this is the plugin that enables path aliases
       viteTsConfigPaths({
-        projects: ['./tsconfig.json'],
+        projects: ["./tsconfig.json"],
       }),
-    ]
-  },
-})
 
-export default config
+      TanStackRouterVite({
+        target: "react",
+        virtualRouteConfig: "./src/routes.ts",
+      }),
+    ],
+  },
+});
+
+export default config;

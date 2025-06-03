@@ -110,6 +110,9 @@ importers:
       '@tanstack/router-plugin':
         specifier: ^1.114.3
         version: 1.120.15(@tanstack/react-router@1.120.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.0))
+      '@tanstack/virtual-file-routes':
+        specifier: ^1.115.0
+        version: 1.115.0
       '@trpc/client':
         specifier: ^11.0.0
         version: 11.2.0(@trpc/server@11.2.0(typescript@5.8.3))(typescript@5.8.3)

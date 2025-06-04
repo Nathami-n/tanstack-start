@@ -1,17 +1,25 @@
-import { useTRPC } from "@/integrations/trpc/react";
-import { useQuery } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
+import { signIn } from "@/lib/auth-client";
 import { createFileRoute } from "@tanstack/react-router";
 
+
 export const Route = createFileRoute("/")({
-  component: App,
-});
+    component: Home
+})
 
-function App() {
-  const trpc = useTRPC()
+ function Home() {
 
-  const query = useQuery(trpc.people.list.queryOptions());
-  return (
-    <div className="bg-primary">
-    </div>
-  );
+    const handleLogin = async () => {
+    await signIn.social({
+        provider: "google",
+        
+    })
+    }
+    return (
+        <div>
+            <Button onClick={handleLogin}>
+                Login
+            </Button>
+        </div>
+    )
 }
